@@ -17,6 +17,17 @@ dependencies:
   vm_service: ^7.1.1
   string_scanner: ^1.1.0
   tuple: ^2.0.0
+  # 统一引入
+  flutter_ume_kit_ui:
+    path: kits/flutter_ume_kit_ui
+  flutter_ume_kit_device:
+    path: kits/flutter_ume_kit_device
+  flutter_ume_kit_perf:
+    path: kits/flutter_ume_kit_perf
+  flutter_ume_kit_show_code:
+    path: kits/flutter_ume_kit_show_code
+  flutter_ume_kit_console:
+    path: kits/flutter_ume_kit_console
   
 dev_dependencies:
   flutter_test:
