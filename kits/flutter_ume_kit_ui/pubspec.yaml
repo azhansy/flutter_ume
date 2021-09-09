@@ -12,7 +12,8 @@ dependencies:
     sdk: flutter
   image: ^3.0.2
   flutter_ume:
-    path: ../../../flutter_ume
+    git: https://github.com/azhansy/flutter_ume.git
+
 
 dev_dependencies:
   flutter_test:

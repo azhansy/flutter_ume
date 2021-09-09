@@ -11,7 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_ume:
-    path: ../../../flutter_ume
+    git: https://github.com/azhansy/flutter_ume.git
+
 
   dio: ^4.0.0
 

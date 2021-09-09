@@ -11,7 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_ume:
-    path: ../../../flutter_ume
+    git: https://github.com/azhansy/flutter_ume.git
+
   share: ^2.0.4
   vm_service: ^7.1.1
   string_scanner: ^1.1.0
