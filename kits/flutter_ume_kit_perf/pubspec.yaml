@@ -11,7 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
   vm_service: ^7.1.1
-  flutter_ume: '>=0.2.0 <0.3.0'
+  flutter_ume:
+    path: ../../../flutter_ume
 
 dev_dependencies:
   flutter_test:

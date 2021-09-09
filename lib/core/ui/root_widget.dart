@@ -24,11 +24,14 @@ const defaultLocalizationsDelegates = const [
 ];
 
 final GlobalKey<OverlayState> overlayKey = GlobalKey<OverlayState>();
-
+late final overlayEntry = OverlayEntry(builder: (BuildContext context) {
+  return const _FloatingWidget();
+});
 /// Wrap your App widget. If [enable] is false, the function will return [child].
 Widget injectUMEWidget({
   required Widget child,
   required bool enable,
+  required bool firstShow,
   Iterable<Locale>? supportedLocales,
   Iterable<LocalizationsDelegate> localizationsDelegates =
       defaultLocalizationsDelegates,
@@ -38,11 +41,11 @@ Widget injectUMEWidget({
       : PluggableMessageService().clearListener();
   WidgetsFlutterBinding.ensureInitialized();
   WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
-    if (enable) {
-      final overlayEntry = OverlayEntry(builder: (BuildContext context) {
-        return const _FloatingWidget();
-      });
-      overlayKey.currentState?.insert(overlayEntry);
+    if (firstShow) {
+      // final overlayEntry = OverlayEntry(builder: (BuildContext context) {
+      //   return const _FloatingWidget();
+      // });
+      showUMEFloating();
     }
     StaticVariableManager.hasAttached = enable;
   });
@@ -63,6 +66,23 @@ Widget injectUMEWidget({
       ],
     ),
   );
+}
+bool show = false;
+
+void showUMEFloating(){
+  WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+    if (!show) {
+      overlayKey.currentState?.insert(overlayEntry);
+      show = true;
+    }
+  });
+}
+
+void hideUMEFloating(){
+  if (show) {
+    overlayEntry.remove();
+    show = false;
+  }
 }
 
 class _FloatingWidget extends StatelessWidget {
