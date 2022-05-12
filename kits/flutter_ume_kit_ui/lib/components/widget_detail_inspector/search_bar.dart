@@ -149,7 +149,7 @@ class _SearchInputState extends State<SearchBar> {
         maxLines: 1,
         onSubmitted: _inputSubmitHandle,
         // ignore: deprecated_member_use
-        maxLengthEnforced: false,
+        // maxLengthEnforced: false,
         style: TextStyle(
           fontSize: 15.0,
           color: Colors.black,
