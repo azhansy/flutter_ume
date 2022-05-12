@@ -33,7 +33,7 @@ class _WidgetInfoInspectorState extends State<WidgetInfoInspector>
   _WidgetInfoInspectorState()
       : selection = WidgetInspectorService.instance.selection;
 
-  final window = WidgetsBinding.instance!.window;
+  final window = WidgetsBinding.instance.window;
 
   Offset? _lastPointerLocation;
 

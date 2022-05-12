@@ -45,7 +45,7 @@ class _DetailPage extends StatefulWidget {
 class _DetailPageState extends State<_DetailPage> with WidgetsBindingObserver {
   _DetailPageState() : selection = WidgetInspectorService.instance.selection;
 
-  final window = WidgetsBinding.instance!.window;
+  final window = WidgetsBinding.instance.window;
 
   Offset? _lastPointerLocation;
 

@@ -40,7 +40,7 @@ Widget injectUMEWidget({
       ? PluggableMessageService().resetListener()
       : PluggableMessageService().clearListener();
   WidgetsFlutterBinding.ensureInitialized();
-  WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
     if (firstShow) {
       // final overlayEntry = OverlayEntry(builder: (BuildContext context) {
       //   return const _FloatingWidget();
@@ -56,7 +56,7 @@ Widget injectUMEWidget({
       children: <Widget>[
         RepaintBoundary(child: child, key: rootKey),
         MediaQuery(
-          data: MediaQueryData.fromWindow(WidgetsBinding.instance!.window),
+          data: MediaQueryData.fromWindow(WidgetsBinding.instance.window),
           child: Localizations(
             locale: supportedLocales?.first ?? Locale('en', 'US'),
             delegates: localizationsDelegates.toList(),
@@ -70,7 +70,7 @@ Widget injectUMEWidget({
 bool show = false;
 
 void showUMEFloating(){
-  WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
     if (!show) {
       overlayKey.currentState?.insert(overlayEntry);
       show = true;

@@ -115,7 +115,7 @@ class _SearchInputState extends State<SearchBar> {
     }
     return GestureDetector(
       onTap: () {
-        WidgetsBinding.instance!.addPostFrameCallback((_) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           _inputController.clear();
           _focus();
         });
